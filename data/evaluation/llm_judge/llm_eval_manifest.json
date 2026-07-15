@@ -1,0 +1,25 @@
+{
+  "source_jsonl": "data\\processed\\source_criteria.jsonl",
+  "sample_size": 2000,
+  "num_eval_items": 8000,
+  "methods": [
+    {
+      "method_key": "flat",
+      "method_label": "Flat"
+    },
+    {
+      "method_key": "or_direct",
+      "method_label": "OR-direct"
+    },
+    {
+      "method_key": "constraint",
+      "method_label": "Constraint"
+    },
+    {
+      "method_key": "cgglc",
+      "method_label": "CG-GLC"
+    }
+  ],
+  "seed": 2026,
+  "full_dataset": true
+}

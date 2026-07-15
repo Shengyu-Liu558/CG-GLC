@@ -1,0 +1,56 @@
+{
+  "flat": {
+    "mode": "flat",
+    "method_label": "Flat",
+    "num_records": 2000,
+    "stats": {
+      "compiled_nonempty": 1942,
+      "has_scope_annotation": 767,
+      "compiled_empty": 58,
+      "has_or_expression": 2
+    },
+    "file": "data\\processed\\boolean_outputs\\flat.jsonl"
+  },
+  "or_direct": {
+    "mode": "or_direct",
+    "method_label": "OR-direct",
+    "num_records": 2000,
+    "stats": {
+      "compiled_nonempty": 1942,
+      "has_or_expression": 1328,
+      "has_scope_annotation": 767,
+      "has_or_event": 1336,
+      "compiled_empty": 58
+    },
+    "file": "data\\processed\\boolean_outputs\\or_direct.jsonl"
+  },
+  "constraint": {
+    "mode": "constraint",
+    "method_label": "Constraint",
+    "num_records": 2000,
+    "stats": {
+      "compiled_nonempty": 1942,
+      "has_not_expression": 406,
+      "has_scope_annotation": 767,
+      "has_semantic_attachment": 692,
+      "compiled_empty": 58,
+      "has_or_expression": 2
+    },
+    "file": "data\\processed\\boolean_outputs\\constraint.jsonl"
+  },
+  "cgglc": {
+    "mode": "cgglc",
+    "method_label": "CG-GLC",
+    "num_records": 2000,
+    "stats": {
+      "compiled_nonempty": 1942,
+      "has_or_expression": 1334,
+      "has_not_expression": 408,
+      "has_scope_annotation": 767,
+      "has_or_event": 1335,
+      "has_semantic_attachment": 380,
+      "compiled_empty": 58
+    },
+    "file": "data\\processed\\boolean_outputs\\cgglc.jsonl"
+  }
+}

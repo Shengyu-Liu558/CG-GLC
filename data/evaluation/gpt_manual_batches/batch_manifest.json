@@ -1,0 +1,8 @@
+{
+  "source_items": "data\\evaluation\\llm_judge\\llm_eval_items.jsonl",
+  "guide": "docs\\gpt_manual_evaluation_guide.md",
+  "batch_size": 25,
+  "num_items": 8000,
+  "num_batches": 320,
+  "output_dir": "data\\evaluation\\gpt_manual_batches"
+}

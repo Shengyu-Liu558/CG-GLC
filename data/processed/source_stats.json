@@ -1,0 +1,63 @@
+{
+  "num_trials": 1000,
+  "num_criteria_units": 2000,
+  "entity_types": {
+    "Condition": 12039,
+    "Value": 4002,
+    "Procedure": 3595,
+    "Scope": 4254,
+    "Qualifier": 4157,
+    "Observation": 1795,
+    "Temporal": 3044,
+    "Negation": 843,
+    "Measurement": 3305,
+    "Drug": 3801,
+    "Person": 1666,
+    "Reference_point": 934,
+    "Multiplier": 671,
+    "Device": 386,
+    "Non-representable": 304,
+    "Non-query-able": 786,
+    "Competing_trial": 96,
+    "Informed_consent": 258,
+    "Visit": 165,
+    "Mood": 573,
+    "Line": 100,
+    "Post-eligibility": 485,
+    "Context_Error": 143,
+    "Parsing_Error": 608,
+    "Not_a_criteria": 76,
+    "Subjective_judgement": 241,
+    "Undefined_semantics": 265,
+    "Pregnancy_considerations": 190,
+    "Grammar_Error": 82,
+    "c-Requires_causality": 1,
+    "Intoxication_considerations": 5
+  },
+  "relation_types": {
+    "Has_value": 3643,
+    "AND": 2666,
+    "Subsumes": 1875,
+    "Has_temporal": 3092,
+    "Has_negation": 829,
+    "Has_context": 180,
+    "Has_scope": 1513,
+    "Has_qualifier": 3040,
+    "multi": 502,
+    "Has_index": 829,
+    "Has_multiplier": 602,
+    "Has_mood": 490,
+    "OR": 7,
+    "causal": 36
+  },
+  "event_types": {
+    "OR": 4964,
+    "NOT": 4
+  },
+  "attribute_types": {
+    "Optional": 316
+  },
+  "files": {
+    "source_criteria": "data\\processed\\source_criteria.jsonl"
+  }
+}

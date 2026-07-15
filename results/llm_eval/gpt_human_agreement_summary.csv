@@ -1,0 +1,16 @@
+﻿section,target,left_label,right_label,n,left_mean,right_mean,right_minus_left_mean,mean_abs_diff,exact_agreement,within_1,within_2,pearson,spearman,quadratic_weighted_kappa
+human_human,total_score,reviewer_1,reviewer_2,50,6.64,6.94,0.3,0.66,0.64,0.82,0.9,0.941005,0.934587,
+human_human,predicate_completeness,reviewer_1,reviewer_2,50,1.5,1.52,0.02,0.02,0.98,1.0,1.0,0.960769,0.960769,0.96
+human_human,logical_correctness,reviewer_1,reviewer_2,50,1.4,1.48,0.08,0.16,0.84,1.0,1.0,0.886946,0.877489,0.876543
+human_human,grouping_correctness,reviewer_1,reviewer_2,50,1.32,1.3,-0.02,0.18,0.82,1.0,1.0,0.870638,0.851277,0.866469
+human_human,faithfulness,reviewer_1,reviewer_2,50,1.24,1.34,0.1,0.14,0.86,1.0,1.0,0.896845,0.914667,0.881033
+human_human,downstream_usability,reviewer_1,reviewer_2,50,1.18,1.3,0.12,0.16,0.84,1.0,1.0,0.879441,0.872199,0.867987
+gpt_human,total_score,human_mean,gpt,50,6.79,7.06,0.27,2.05,0.24,0.44,0.58,0.623057,0.595181,
+gpt_human,predicate_completeness,human_mean,gpt,50,1.51,1.4,-0.11,0.29,0.7,1.0,1.0,0.521535,0.524642,
+gpt_human,logical_correctness,human_mean,gpt,50,1.44,1.66,0.22,0.38,0.62,0.92,1.0,0.611823,0.640575,
+gpt_human,grouping_correctness,human_mean,gpt,50,1.31,1.44,0.13,0.61,0.34,0.96,1.0,0.403308,0.335674,
+gpt_human,faithfulness,human_mean,gpt,50,1.29,1.3,0.01,0.43,0.5,1.0,1.0,0.595468,0.594824,
+gpt_human,downstream_usability,human_mean,gpt,50,1.24,1.26,0.02,0.44,0.48,1.0,1.0,0.590925,0.583633,
+gpt_human_by_bucket,or,human_mean_total,gpt_total,25,5.4,6.08,0.68,2.4,0.16,0.32,0.52,0.547712,0.574132,
+gpt_human_by_bucket,other,human_mean_total,gpt_total,10,9.55,7.4,-2.15,2.15,0.4,0.5,0.5,0.761905,0.557086,
+gpt_human_by_bucket,scope,human_mean_total,gpt_total,15,7.266667,8.466667,1.2,1.4,0.266667,0.6,0.733333,0.820568,0.798714,

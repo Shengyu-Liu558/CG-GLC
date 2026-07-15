@@ -1,0 +1,4 @@
+﻿comparison,n,mean_total_score_difference,cgglc_wins,ties,cgglc_losses
+CG-GLC vs constraint,2000,1.8025,1019,941,40
+CG-GLC vs flat,2000,2.286,1284,666,50
+CG-GLC vs or_direct,2000,0.693,727,1150,123
