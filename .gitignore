@@ -6,3 +6,4 @@ __pycache__/
 _validate*.txt
 ~$*
 *.tmp
+data/raw/chia_with_scope/

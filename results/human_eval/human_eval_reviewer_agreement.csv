@@ -1,0 +1,31 @@
+﻿group,method_key,method_label,target,n,reviewer_1_mean,reviewer_2_mean,reviewer_2_minus_reviewer_1_mean,mean_abs_diff,exact_agreement,within_1,within_2,pearson,spearman
+overall,all,All methods,total_score,200,5.275,4.94,-0.335,1.105,0.385,0.715,0.87,0.891386,0.886271
+overall,all,All methods,predicate_completeness,200,1.25,1.26,0.01,0.14,0.86,1.0,1.0,0.740855,0.772533
+overall,all,All methods,logical_correctness,200,1.135,1.135,0.0,0.2,0.8,1.0,1.0,0.879791,0.894485
+overall,all,All methods,grouping_correctness,200,0.865,0.82,-0.045,0.165,0.835,1.0,1.0,0.865922,0.872954
+overall,all,All methods,faithfulness,200,1.095,0.88,-0.215,0.345,0.655,1.0,1.0,0.763195,0.770772
+overall,all,All methods,downstream_usability,200,0.93,0.845,-0.085,0.295,0.71,0.995,1.0,0.745996,0.741243
+by_method,flat,Flat,total_score,50,3.9,3.22,-0.68,1.12,0.32,0.74,0.88,0.890654,0.884713
+by_method,flat,Flat,predicate_completeness,50,1.02,0.92,-0.1,0.26,0.74,1.0,1.0,0.450578,0.442112
+by_method,flat,Flat,logical_correctness,50,0.82,0.82,0.0,0.2,0.8,1.0,1.0,0.88474,0.845411
+by_method,flat,Flat,grouping_correctness,50,0.44,0.4,-0.04,0.08,0.92,1.0,1.0,0.872052,0.882853
+by_method,flat,Flat,faithfulness,50,1.0,0.58,-0.42,0.42,0.58,1.0,1.0,0.762419,0.774621
+by_method,flat,Flat,downstream_usability,50,0.62,0.5,-0.12,0.28,0.72,1.0,1.0,0.653103,0.671832
+by_method,or_direct,OR-direct,total_score,50,5.36,4.46,-0.9,1.5,0.22,0.62,0.8,0.801338,0.826914
+by_method,or_direct,OR-direct,predicate_completeness,50,1.02,1.12,0.1,0.14,0.86,1.0,1.0,0.403631,0.412809
+by_method,or_direct,OR-direct,logical_correctness,50,1.4,1.18,-0.22,0.26,0.74,1.0,1.0,0.865838,0.896534
+by_method,or_direct,OR-direct,grouping_correctness,50,0.92,0.8,-0.12,0.2,0.8,1.0,1.0,0.672987,0.682892
+by_method,or_direct,OR-direct,faithfulness,50,1.2,0.68,-0.52,0.56,0.44,1.0,1.0,0.751339,0.805823
+by_method,or_direct,OR-direct,downstream_usability,50,0.82,0.68,-0.14,0.34,0.66,1.0,1.0,0.601429,0.604864
+by_method,constraint,Constraint,total_score,50,5.2,5.14,-0.06,1.14,0.36,0.68,0.9,0.897969,0.903032
+by_method,constraint,Constraint,predicate_completeness,50,1.46,1.48,0.02,0.14,0.86,1.0,1.0,0.742454,0.756583
+by_method,constraint,Constraint,logical_correctness,50,0.92,1.06,0.14,0.18,0.82,1.0,1.0,0.912123,0.918507
+by_method,constraint,Constraint,grouping_correctness,50,0.78,0.78,0.0,0.2,0.8,1.0,1.0,0.871571,0.898702
+by_method,constraint,Constraint,faithfulness,50,0.94,0.92,-0.02,0.26,0.74,1.0,1.0,0.812052,0.811197
+by_method,constraint,Constraint,downstream_usability,50,1.1,0.9,-0.2,0.4,0.62,0.98,1.0,0.700044,0.701691
+by_method,cgglc,CG-GLC,total_score,50,6.64,6.94,0.3,0.66,0.64,0.82,0.9,0.941005,0.934587
+by_method,cgglc,CG-GLC,predicate_completeness,50,1.5,1.52,0.02,0.02,0.98,1.0,1.0,0.960769,0.960769
+by_method,cgglc,CG-GLC,logical_correctness,50,1.4,1.48,0.08,0.16,0.84,1.0,1.0,0.886946,0.877489
+by_method,cgglc,CG-GLC,grouping_correctness,50,1.32,1.3,-0.02,0.18,0.82,1.0,1.0,0.870638,0.851277
+by_method,cgglc,CG-GLC,faithfulness,50,1.24,1.34,0.1,0.14,0.86,1.0,1.0,0.896845,0.914667
+by_method,cgglc,CG-GLC,downstream_usability,50,1.18,1.3,0.12,0.16,0.84,1.0,1.0,0.879441,0.872199

@@ -1,0 +1,4 @@
+﻿comparison,baseline_method_key,baseline_method_label,n_paired_complete,cgglc_total_score_mean,baseline_total_score_mean,mean_total_score_difference,cgglc_wins,ties,cgglc_losses,non_tie_n,cgglc_win_rate_non_tie,sign_test_alternative,sign_test_p_one_sided
+CG-GLC vs Flat,flat,Flat,50,6.79,3.56,3.23,45,3,2,47,0.957447,CG-GLC > baseline,8.02202748673e-12
+CG-GLC vs OR-direct,or_direct,OR-direct,50,6.79,4.91,1.88,39,5,6,45,0.866667,CG-GLC > baseline,2.7088844945e-07
+CG-GLC vs Constraint,constraint,Constraint,50,6.79,5.17,1.62,29,19,2,31,0.935484,CG-GLC > baseline,2.31433659792e-07

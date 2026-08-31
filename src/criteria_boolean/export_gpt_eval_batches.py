@@ -24,7 +24,7 @@ def write_batch(batch, batch_id: int, out_dir: Path, guide_text: str):
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f'gpt_eval_batch_{batch_id:04d}.md'
     with out_path.open('w', encoding='utf-8') as f:
-        f.write('# GPT Evaluation Batch\n\n')
+        f.write('# GPT-5.5 Evaluation Batch\n\n')
         f.write('请先阅读并遵循以下评估指南，然后评价本批候选。只输出 JSONL 评分结果。\n\n')
         f.write('## Evaluation Guide\n\n')
         f.write(guide_text.strip())

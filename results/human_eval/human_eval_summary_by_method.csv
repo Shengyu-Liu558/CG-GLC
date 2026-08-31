@@ -1,0 +1,5 @@
+﻿method_key,method_label,n_complete,predicate_completeness_mean,logical_correctness_mean,grouping_correctness_mean,faithfulness_mean,downstream_usability_mean,reviewer_1_total_mean,reviewer_2_total_mean,total_score_mean
+flat,Flat,50,0.97,0.82,0.42,0.79,0.56,3.9,3.22,3.56
+or_direct,OR-direct,50,1.07,1.29,0.86,0.94,0.75,5.36,4.46,4.91
+constraint,Constraint,50,1.47,0.99,0.78,0.93,1.0,5.2,5.14,5.17
+cgglc,CG-GLC,50,1.51,1.44,1.31,1.29,1.24,6.64,6.94,6.79

@@ -1,23 +1,29 @@
 # 人工评估指南
 
-本指南用于人工评估 CG-GLC 生成的布尔逻辑表达式质量。人工评估不是重新建立完整金标准，而是在固定评分细则下，对本文方法输出进行抽样质量核查，并与 GPT 盲评结果形成互补证据。
+本指南用于人工评估四种图到逻辑编译方法生成的布尔逻辑表达式质量。当前人工评估采用配对设计：沿用同一批 50 条纳排标准编译单元，分别评价 Flat、OR-direct、Constraint 和 CG-GLC 的候选表达式，用于直接检验人工判断下 CG-GLC 是否仍优于对照方法。
 
 ## 评估文件
 
-默认生成两份完全相同的人工评估表：
+每种方法默认生成两份完全相同的人工评估表，供两名评审者独立填写：
 
 ```text
+results/human_eval/flat_human_eval_1.csv
+results/human_eval/flat_human_eval_2.csv
+results/human_eval/or_direct_human_eval_1.csv
+results/human_eval/or_direct_human_eval_2.csv
+results/human_eval/constraint_human_eval_1.csv
+results/human_eval/constraint_human_eval_2.csv
 results/human_eval/cgglc_human_eval_1.csv
 results/human_eval/cgglc_human_eval_2.csv
 ```
 
-生成命令为：
+若需要基于已有 CG-GLC 人工评估样本生成对照方法模板，运行：
 
 ```powershell
-python src/criteria_boolean/generate_human_eval_sample.py --sample-size 50
+python src/criteria_boolean/generate_human_eval_sample.py --methods flat or_direct constraint --reference-csv results/human_eval/cgglc_human_eval_1.csv --skip-existing
 ```
 
-两份 CSV 的样本、顺序和候选表达式完全一致。评审 1 填写 `cgglc_human_eval_1.csv`，评审 2 填写 `cgglc_human_eval_2.csv`，两人独立评分，不需要互相讨论。
+上述命令不会重新抽样，而是复用 `cgglc_human_eval_1.csv` 中的 50 个 `doc_id`、`sample_id` 和 `case_bucket`，为其它方法生成一一配对的候选表达式。评审 1 填写所有 `_1.csv` 文件，评审 2 填写所有 `_2.csv` 文件，两人独立评分，不需要互相讨论。
 
 每条样本包含：
 
@@ -25,7 +31,7 @@ python src/criteria_boolean/generate_human_eval_sample.py --sample-size 50
 - `doc_id`：原始纳排标准编译单元编号。
 - `case_bucket`：样本类型，可能为 `or`、`scope` 或 `other`。
 - `source_criterion`：原始纳排标准文本。
-- `candidate_expression`：CG-GLC 生成的布尔表达式。
+- `candidate_expression`：对应方法生成的布尔表达式。
 - 五个评分字段：见下方评分维度。
 - `reviewer_notes`：评审备注，可记录主要错误或不确定点。
 
@@ -33,11 +39,11 @@ python src/criteria_boolean/generate_human_eval_sample.py --sample-size 50
 
 ## 抽样设置
 
-当前项目默认随机分层抽取 50 条 CG-GLC 输出，覆盖 OR、scope 和普通标准。抽样脚本会过滤不可评估样本，例如原始文本为 `NA`、`N/A`、空文本，或 CG-GLC 输出为 `(EMPTY)` 的记录。
+当前项目沿用已完成 CG-GLC 人工评估的 50 条样本，覆盖 OR、scope 和普通标准。样本分布为：OR 结构样本 25 条、scope 相关样本 15 条、其它样本 10 条。生成对照方法模板时，三种对照方法使用完全相同的 50 条 `doc_id` 和样本顺序，保证后续可以进行配对比较。
 
 `case_bucket` 的含义：
 
-- `or`：原始 CHIA 标注中包含 OR 事件，重点考察候选表达式是否保留析取逻辑。
+- `or`：原始 CHIA 标注中包含 CHIA OR事件线索，重点考察候选表达式是否保留析取逻辑。
 - `scope`：原始 CHIA 标注中包含 `Has_scope` 关系，重点考察修饰成分、数值、时间窗或条件范围是否归属正确。
 - `other`：未归入上述两类的普通样本，用于检查整体基础质量。
 
@@ -105,35 +111,21 @@ unsupported medication condition
 
 ## 汇总
 
-两名评审都完成后，直接运行：
-
-```powershell
-python src/criteria_boolean/summarize_human_eval.py
-```
-
-脚本默认读取：
+四种方法均完成评分后，运行：
 
 ```text
-results/human_eval/cgglc_human_eval_1.csv
-results/human_eval/cgglc_human_eval_2.csv
+python src/criteria_boolean/compare_human_methods.py
 ```
 
-并生成：
+该脚本生成：
 
 ```text
-results/human_eval/cgglc_human_eval_summary.csv
+results/human_eval/human_eval_per_item_200.csv
+results/human_eval/human_eval_summary_by_method.csv
+results/human_eval/human_eval_paired_vs_cgglc.csv
+results/human_eval/human_eval_reviewer_agreement.csv
+results/human_eval/gpt_human_eval_200.csv
+results/human_eval/gpt_human_agreement_200.csv
 ```
 
-`cgglc_human_eval_summary.csv` 用于报告人工评估总体结果，包括五个维度均分、总分均分、两名评审完全一致率和平均绝对差异。`results/human_eval/` 目录只保留两份人工原表和这个人工汇总表。
-
-如果需要生成 GPT 与人工评分的一致性分析，运行：
-
-```powershell
-python src/criteria_boolean/compare_gpt_human_eval.py
-```
-
-该脚本默认读取两份人工评估表和 `results/llm_eval/llm_judge_per_item.csv`，并生成：
-
-```text
-results/llm_eval/gpt_human_agreement_summary.csv
-```
+其中 `human_eval_per_item_200.csv` 为 50 个纳排标准单元 × 4 种方法的人工评分明细；`human_eval_summary_by_method.csv` 用于报告四种方法的人工评分均值；`human_eval_paired_vs_cgglc.csv` 用于报告 CG-GLC 相对三种对照方法的配对总分差、胜/平/负数量，以及剔除平分样本后的单侧精确符号检验 P 值；`human_eval_reviewer_agreement.csv` 用于报告两名评审者之间的一致性；`gpt_human_eval_200.csv` 从全量 GPT 盲评结果中抽取同一批 200 条候选表达式；`gpt_human_agreement_200.csv` 用于报告 GPT 评分与人工均分的一致性。

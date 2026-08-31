@@ -1,12 +1,12 @@
-# GPT Evaluation Batch
+# GPT-5.5 Evaluation Batch
 
 请先阅读并遵循以下评估指南，然后评价本批候选。只输出 JSONL 评分结果。
 
 ## Evaluation Guide
 
-# GPT 评估指南
+# GPT-5.5 评估指南
 
-本指南用于让大模型对临床试验纳排标准的候选布尔表达式进行盲化语义评估。GPT 评分不是金标准，也不是对隐藏答案的匹配；它只是在固定 rubric 下，根据原始纳排标准文本判断候选表达式的忠实性、完整性和可用性。
+本指南用于让 GPT-5.5 对临床试验纳排标准的候选布尔表达式进行盲化语义评估。GPT-5.5 评分不是金标准，也不是对隐藏答案的匹配；它只是在固定 rubric 下，根据原始纳排标准文本判断候选表达式的忠实性、完整性和可用性。
 
 ## 评估角色
 
@@ -157,7 +157,7 @@ data/evaluation/gpt_manual_batches/
 python src/criteria_boolean/summarize_llm_judge.py
 ```
 
-## 给 Codex 或 GPT 的输入模板
+## 给 Codex 或 GPT-5.5 的输入模板
 
 如果使用 Codex 直接读取本项目文件，可以输入：
 
@@ -184,7 +184,7 @@ python src/criteria_boolean/summarize_llm_judge.py
 注意：
 - 不要读取 data/evaluation/llm_judge/llm_eval_key.csv。
 - 如果结果文件不存在，请创建它。
-- 如果输出行数不是 25 行，请停止并说明原因。
+- 如果输出行数不是25行，请停止并说明原因。
 ```
 
 评估下一批时，只需要把文件名改成 `gpt_eval_batch_0002.md`、`gpt_eval_batch_0003.md`，依次类推。所有批次完成后，再运行汇总脚本。
